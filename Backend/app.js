@@ -273,6 +273,8 @@ app.get("/gifs/gifId",(request, response, next) => {
 });
 
 app.get("/", (request, response, next) => {
+    request.header = {};
+    request.body = {};
     response.status(200).send({
         "message": "Your request was a success!"
     });

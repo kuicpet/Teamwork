@@ -35,6 +35,13 @@ app.post("/auth/create-user",(request, response, next) =>{
     });
     next();
 });
+app.post("/test", (request, response, next) => {
+    response.status(500).send({
+        "status": "error", 
+        "message": "User account was NOT successfully created" 
+    });
+    next();
+});
 
 /*Login a user*/
 app.post("/auth/signin",(request, response, next) => {

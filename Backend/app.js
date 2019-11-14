@@ -287,7 +287,7 @@ app.get("/feed",(req, res, next) => {
     jwt.verify(req.token, "secretKey",(err, authData ) => {
         
         if(err){
-            return res.status(403).json({"status" : "error","message" : "no feed"});
+            return res.status(403).json({"status" : "error","message" : "error"});
         } 
         return res.status(200).send({
             "status" : "success",

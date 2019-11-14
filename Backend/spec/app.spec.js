@@ -64,7 +64,7 @@ describe("Server", () => {
             expect(data.status).toBe(201);
         });
         it("Body", () => {
-            expect(data.body).toBe({
+            expect(data.body).toEqual({
                 "status": "success",
                 "data" : {
                     "message": "User account successfully created",
@@ -77,17 +77,17 @@ describe("Server", () => {
     describe("POST /test", () => {
         var data = {};
         beforeAll((done) => {
-            Request.get("http://localhost:3000/test", (error, response, body) => {
+            Request.get("http://localhost:3000/auth/create-user/test", (error, response, body) => {
                 data.status = response.statusCode;
                 data.body = JSON.parse(body);
                 done();
             });
         });
-        it("Status 200", () => {
+        it("Status 201", () => {
             expect(data.status).toBe(500);
         });
         it("Body", () => {
-            expect(data.body.message).toBe("This is an error response");
+            expect(data.body.message).toBe({message:"This is an error response"});
         });
     });
 });

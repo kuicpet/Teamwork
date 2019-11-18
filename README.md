@@ -19,7 +19,7 @@ Teamwork is an internal social network for employees of an organization. The goa
 
 ## API Documentation
 
-The documentation for the Postit API can be found [here.] //(https://postit-ray.herokuapp.com/api/v1/docs)
+The documentation for the Postit API can be found [here.] 
 
 ## Key Features
 ##### Users
@@ -27,10 +27,10 @@ The documentation for the Postit API can be found [here.] //(https://postit-ray.
 ##### Authentication
   - Teamwork uses JWT for authentication.
   - On successfull sign up or sign in, the user receives a token in the `OAuth` header which can be used to authenticate requests to protected endpoints.
-  For a list of endpoints that are protected and those that are not, see our [documentation]//(https://postit-ray.herokuapp.com/api/v1/docs).
+  For a list of endpoints that are protected and those that are not, see our [documentation]
 
 ##### Real time updates
-  - The client side implementation uese React, which helps ensure that the app updates in real time. You can interact with the hosted app [here.]//(https://postit-ray.herokuapp.com)
+  - The client side implementation uese React, which helps ensure that the app updates in real time. You can interact with the hosted app [here.]
 
 ##### Password recovery
   - Forgot your password? No problem. Users can request a password reset, and get a mail with reset instructions.
@@ -113,7 +113,7 @@ Copyright © [The MIT License](./LICENCE.md)
 
 ## FAQs
 #### What is Teamwork?
-Postit is a communication platform that allows users create signup, create groups, add users to their groups and interact with other group members by posting messages to their groups.
+Teamwork is an internal social network for employees of an organization. The goal of this application is to facilitate more interaction between colleagues and promote team bonding.
     
 #### How do I use it?
 You can signup for an account on https://postit-ray.herokuapp.com to use the client side implementation built on the API. If you are a developer and wish to use the API, see the [documentation](https://postit-ray.herokuapp.com/api/v1/docs) to learn how to start and what endpoints are available.

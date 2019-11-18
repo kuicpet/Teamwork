@@ -1,22 +1,32 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-let jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
+const cloudinary = require('cloudinary');
 
 
 //express app
 const app = express();
 
+//database
+const db = new DataSore;
+
+//middlewares
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 
-//CORS
+//cors
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
-
+//cloudinary
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
+  });
 /*Create user account*/
 app.post("/auth/create-user",(req, res, next) =>{
         if(!req.body.firstname){

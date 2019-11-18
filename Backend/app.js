@@ -1,14 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
 const cloudinary = require('cloudinary');
-
+const multipart = require('connect-multiparty');
 
 //express app
 const app = express();
 
 //database
-const db = new DataSore;
+
 
 //middlewares
 app.use(bodyParser.json());
@@ -21,6 +22,8 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
 });
+//multipart
+const multipartyMiddleware = multipart();
 //cloudinary
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
